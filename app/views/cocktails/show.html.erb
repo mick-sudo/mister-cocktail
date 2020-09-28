@@ -7,6 +7,7 @@
       <h5 class="card-title"><%= @cocktail.name %></h5>
       <p class="card-text"><%= @cocktail.description %></p>
           <a href="<%=root_path %>" class="btn btn-primary">back to list</a>
+          <td><%= link_to 'delete', cocktail_path(@cocktail[:id]), method: :delete, data: {confirm: "Are you sure?"} %></td>
     </div>
   </div>
 </div>
