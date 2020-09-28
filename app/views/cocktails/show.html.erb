@@ -1,1 +1,12 @@
 <h1>show</h1>
+<div class="container">
+<div class="text-center"></div>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://www.destinationcocktails.fr/wp-content/uploads/2019/11/le_secret_des_cocktails_a_etages-2.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= @cocktail.name %></h5>
+      <p class="card-text"><%= @cocktail.description %></p>
+          <a href="<%=root_path %>" class="btn btn-primary">back to list</a>
+    </div>
+  </div>
+</div>
