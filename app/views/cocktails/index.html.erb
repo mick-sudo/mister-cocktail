@@ -1,4 +1,5 @@
 
+
 <div class="container text-center">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://petitpalaisdaglae-gordes.com/wp-content/uploads/2018/08/cocktail-au-Petit-Palais-dAgla%C3%A9.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
     <div class="container">
@@ -13,7 +14,11 @@
   <div class="d-flex justify-content-center">
     <% @cocktails.each do |cocktail| %>
       <div class="card m-2" style="width: 18rem;">
-        <%= cl_image_tag cocktail.photo.key %>
+        <% if cocktail.photo.attachment.nil? %>
+           <img class="card-img-top" src="https://www.destinationcocktails.fr/wp-content/uploads/2019/11/le_secret_des_cocktails_a_etages-2.jpg" alt="Card image cap">
+        <% else %>
+          <%= cl_image_tag cocktail.photo.key %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= cocktail.name %></h5>
           <p class="card-text"><%= cocktail.description %></p>
