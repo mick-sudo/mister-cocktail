@@ -2,7 +2,7 @@
 <div class="container ">
 <div class="text-center"></div>
   <div class="card mx-auto" style="width: 18rem;">
-    <img class="card-img-top" src="https://www.destinationcocktails.fr/wp-content/uploads/2019/11/le_secret_des_cocktails_a_etages-2.jpg" alt="Card image cap">
+    <%= cl_image_tag @cocktail.photo.key %>
     <div class="card-body">
       <h5 class="card-title"><%= @cocktail.name %></h5>
       <p class="card-text"><%= @cocktail.description %></p>
