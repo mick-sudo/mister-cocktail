@@ -16,3 +16,15 @@
   </div>
 </div>
 
+<ul class="list-group">
+  <% @cocktail.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+        <%= link_to "Remove",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+  <% end %>
+</ul>
+
+<%= link_to 'Back', root_path %> |
+<%= link_to 'Leave a review', new_cocktail_review_path(@cocktail) %>
